@@ -8,7 +8,7 @@ const getMovies = async (type) => {
     div.innerHTML = "";
 
     peliculas.forEach(pelicula => {
-       
+       // Template for every movie in the loop
         div.innerHTML += "<div class='col-lg-4 col-md-4 col-6 mb-3'>" +
                             "<div class='card'>" +
                                 "<img class='img-fluid img-thumbnail' src='https://image.tmdb.org/t/p/w220_and_h330_face/" + pelicula.poster_path + "' alt='" + pelicula.original_title + "'>" +
@@ -41,6 +41,7 @@ const getMovies = async (type) => {
     // Init the grid with popular movies
     getMovies('popular');
 
+    // Interaction to change the button status and change the title from grid
     $('.btn-outline-secondary').on( "click", function() {
         const title = $(this).text();
 
