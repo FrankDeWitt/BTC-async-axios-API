@@ -14,7 +14,6 @@ const getMovies = async (type) => {
                                 "<img class='img-fluid img-thumbnail' src='https://image.tmdb.org/t/p/w220_and_h330_face/" + pelicula.poster_path + "' alt='" + pelicula.original_title + "'>" +
                                 "<div class='card-body'>" +
                                     "<h5 class='card-title'>" + pelicula.original_title + "</h5>" +
-                                        "<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
                                         "<div data-toggle='modal' data-target='#exampleModal" + pelicula.id + "' class='btn btn-secondary' target='_blank'>Ver resumen</>" +
                                 " </div>" +
                                 "</div>" +
@@ -22,7 +21,7 @@ const getMovies = async (type) => {
                                     "<div class='modal-dialog' role='document'>" +
                                         "<div class='modal-content'>" +
                                             "<div class='modal-header'>" +
-                                                "<h5 class='modal-title' id='exampleModalLabel'>" + pelicula.original_title + " <small class='text-muted'>" + pelicula.release_date + "</small></h5> " +
+                                                "<h5 class='modal-title' id='exampleModalLabel'>" + pelicula.original_title + " <small class='text-muted'>(" + pelicula.release_date + ")</small></h5> " +
                                                 "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>" +
                                                 "<span aria-hidden='true'>&times;</span>" +
                                                 "</button>" +
@@ -38,3 +37,16 @@ const getMovies = async (type) => {
     })
 }
 
+(function() {
+    // Init the grid with popular movies
+    getMovies('popular');
+
+    $('.btn-outline-secondary').on( "click", function() {
+        const title = $(this).text();
+
+        $('.btn-outline-secondary').removeClass('active');
+        $(this).addClass('active');
+        $('.title-grid').empty().append(title);
+
+    });
+ })();
