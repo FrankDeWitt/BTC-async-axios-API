@@ -1,0 +1,29 @@
+{
+  "name": "BTC-async-axios-API",
+  "version": "1.0.0",
+  "description": "_Llamada a API con axios.get para recuperar tres listas de películas_",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p",
+    "dev": "webpack-dev-server -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankDeWitt/BTC-async-axios-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrankDeWitt/BTC-async-axios-API/issues"
+  },
+  "homepage": "https://github.com/FrankDeWitt/BTC-async-axios-API#readme",
+  "dependencies": {
+    "css-loader": "^3.5.2",
+    "html-webpack-plugin": "^4.2.0",
+    "style-loader": "^1.1.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
